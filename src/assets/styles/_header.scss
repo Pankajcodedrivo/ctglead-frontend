@@ -1,0 +1,20 @@
+.header {
+   padding: 30px 0;
+   background: var(--color-blue);     
+   @media (max-width:1700px) {
+    padding: 23px 0;
+   }
+}
+.header-otr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    max-width: 318px;
+    min-width: 318px;
+    @media (max-width:1700px) {
+        max-width: 260px;
+        min-width: 260px;
+    }
+}
