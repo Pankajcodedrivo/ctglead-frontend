@@ -4,6 +4,12 @@
    @media (max-width:1700px) {
     padding: 23px 0;
    }
+   @media (max-width:1399px) {
+    padding: 18px 0;
+   }
+   @media (max-width:991px) {
+    padding: 12px 0;
+   }
 }
 .header-otr {
     display: flex;
@@ -16,5 +22,17 @@
     @media (max-width:1700px) {
         max-width: 260px;
         min-width: 260px;
+    }
+    @media (max-width:1399px) {
+        max-width: 190px;
+        min-width: 190px;
+    }
+    @media (max-width:1199px) {
+        max-width: 140px;
+        min-width: 140px;
+    }
+    @media (max-width:575px) {
+        max-width: 100px;
+        min-width: 100px;
     }
 }

@@ -2,9 +2,31 @@
     background: var(--color-a6);
     padding-top: 64px;
     padding-bottom: 73px;
+    @media (max-width:1399px) {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+    @media (max-width:991px) {
+        padding: 30px 0;
+    }
+    @media (max-width:575px) {
+        text-align: center;
+    }
     .footer-logo {
         max-width: 240px;
         min-width: 240px;
+        @media (max-width:1399px) {
+            max-width: 190px;
+            min-width: 190px;
+        }
+        @media (max-width:1199px) {
+            max-width: 150px;
+            min-width: 150px;
+        }
+        @media (max-width:575px) {
+            max-width: 100px;
+            min-width: 100px;
+        }
     }
     .footer-top {
         border-bottom: 1px solid rgba(255,255,255,0.4);
@@ -13,28 +35,66 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:1399px) {
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+        @media (max-width:575px) {
+            flex-direction: column;
+            gap: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
     }
     .footer-bottom {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:991px) {
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
         p {
             font-size: 20px;
             font-weight: 400;
             color: var(--color-white);
             margin-bottom: 0;
+            @media (max-width:1399px) {
+                font-size: 17px;
+            }
+            @media (max-width:1199px) {
+                font-size: 15px;
+            }
+            @media (max-width:575px) {
+                font-size: 14px;
+            }
         }
     }
     .social-list {
         display: flex;
         flex-wrap: wrap;
         gap: 32px;
+        @media (max-width:1399px) {
+            gap: 25px;
+        }
+        @media (max-width:1199px) {
+            gap: 16px;
+        }
         li {
             a {
                 color: var(--color-white);
                 font-size: 24px;
                 display: inline-block;
                 transition: all 0.5s;
+                @media (max-width:1399px) {
+                    font-size: 20px;
+                }
+                @media (max-width:1199px) {
+                    font-size: 17px;
+                }
+                @media (max-width:575px) {
+                    font-size: 14px;
+                }
                 &:hover {
                     transform: rotate(360deg);
                 }

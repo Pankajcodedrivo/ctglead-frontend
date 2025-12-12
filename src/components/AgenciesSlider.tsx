@@ -37,7 +37,7 @@ const AgenciesSlider = () => {
                 settings: { slidesToShow: 2 },
             },
             {
-                breakpoint: 768,
+                breakpoint: 767,
                 settings: { slidesToShow: 1 },
             },
         ],

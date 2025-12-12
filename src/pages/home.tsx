@@ -14,13 +14,13 @@ const Home = () => {
       <section className="banner">
         <div className="container">
           <div className="row align-items-end">
-            <div className="col-md-7 banner-content">
+            <div className="col-lg-7 banner-content">
               <h1>The Future of Insurance Leads Starts Here.</h1>
               <h6>Leads Evolved. Profiles that Quote.</h6>
               <p>Every profile is quote-ready with verified phone, email, address, VIN numbers, and driver license details. CTG Lead is fully compliant, with consumer consent and signed authorization for quoting and credit checks.</p>
               <Link to="/" className="btn btn-primary">Get Started Today</Link>
             </div>
-            <div className="col-md-5">
+            <div className="col-lg-5">
               <div className="ban-img">
                 <img src={banImg} alt="" />
               </div>
@@ -86,14 +86,14 @@ const Home = () => {
       <section className="benefits-sec common-gap">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-4">
+            <div className="col-lg-4">
               <div className="cmn-hdr mb-0">
                 <h6 className="mb-3">Benefits</h6>
                 <h2>Every Detail Is Built for Agency Success.</h2>
                 <p>Most companies sell leads. We deliver profiles, the evolution of the lead. Every profile includes verified phone, email, and address, VIN and driver license details, and signed consumer consent so it is not just a name on a list… it is a lead you can actually quote.</p>
               </div>
             </div>
-            <div className="col-md-8">
+            <div className="col-lg-8">
               <div className="benefit-right">
                 <div className="row g-3">
                   <div className="col-md-6">

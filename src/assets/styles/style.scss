@@ -87,6 +87,18 @@ h1 {
     @media (max-width:1700px) {
         font-size: 60px;
     }
+    @media (max-width:1399px) {
+        font-size: 48px;
+    }
+    @media (max-width:1199px) {
+        font-size: 38px;
+    }
+    @media (max-width:991px) {
+        font-size: 33px;
+    }
+    @media (max-width:575px) {
+        font-size: 25px;
+    }
 }
 
 h2 {
@@ -94,19 +106,49 @@ h2 {
     font-weight: 600;
     color: var(--color-black);
      @media (max-width:1700px) {
-        font-size: 60px;
+        font-size: 56px;
+    }
+    @media (max-width:1399px) {
+        font-size: 39px;
+    }
+    @media (max-width:1199px) {
+        font-size: 28px;
+    }
+    @media (max-width:991px) {
+        font-size: 24px;
+    }
+    @media (max-width:575px) {
+        font-size: 21px;
     }
 }
 h3 {
     font-weight: 600;
     font-size: 32px;
     color: #292929;
+    @media (max-width:1700px) {
+        font-size: 28px;
+    }
+    @media (max-width:1399px) {
+        font-size: 23px;
+    }
+    @media (max-width:767px) {
+        font-size: 20px;
+    }
 }
 
 h4 {
     font-size: 28px;
     font-weight: 600;
     color: #292929;
+    @media (max-width:1700px) {
+        font-size: 23px;
+    }
+    @media (max-width:1399px) {
+        font-size: 20px;
+    }
+     @media (max-width:767px) {
+        font-size: 18px;
+    }
 }
 
 ul {
@@ -131,6 +173,18 @@ input.form-control:focus {
         font-size: 23px;
         padding:20px 24px;
     }
+    @media (max-width:1399px) {
+        font-size: 20px;
+        padding:17px 24px;
+    }
+    @media (max-width:1199px) {
+        font-size: 17px;
+        padding: 15px 20px;
+    }
+    @media (max-width:575px) {
+        font-size: 15px;
+        padding: 13px 20px;
+    }
     &.btn-primary {
         background: var(--color-btn);
         color: var(--color-white);
@@ -140,7 +194,16 @@ input.form-control:focus {
     }
 }
 
-
+.g-5, .gy-5 {
+    @media (max-width:991px) {
+        --bs-gutter-y: 2rem;
+    }
+}
+.g-5, .gx-5 {
+    @media (max-width:991px) {
+        --bs-gutter-x: 2rem;
+    }
+}
 .container {
     @media (min-width:1400px) {
         max-width: 1820px;
@@ -149,15 +212,36 @@ input.form-control:focus {
     @media (max-width:1700px) {
         padding: 0 70px;
     }
+    @media (max-width:991px) {
+        padding: 0 30px;
+    }
+    @media (max-width:575px) {
+        padding: 0 15px;
+    }
 }
 .common-gap {
     padding: 184px 0;
     @media (max-width:1700px) {
         padding: 150px 0;
     }
+    @media (max-width:1399px) {
+        padding: 110px 0;
+    }
+    @media (max-width:1199px) {
+        padding: 70px 0;
+    }
+    @media (max-width:767px) {
+        padding: 50px 0;
+    }
 }
 .cmn-hdr {
     margin-bottom: 50px;
+    @media (max-width:1399px) {
+        margin-bottom: 35px;
+    }
+    @media (max-width:1199px) {
+        margin-bottom: 26px;
+    }
     h6 {
         font-size: 32px;
         font-weight: 700;
@@ -177,6 +261,15 @@ input.form-control:focus {
             font-size: 28px;
             margin-bottom: 15px;
         }
+        @media (max-width:1399px) {
+            font-size: 21px;
+        }
+        @media (max-width:1199px) {
+            font-size: 17px;
+        }
+        @media (max-width:991px) {
+            font-size: 14px;
+        }
     }
     h2 {
         margin-bottom: 0;
@@ -186,5 +279,15 @@ input.form-control:focus {
         font-size: 25px;
         font-weight: 400;
         margin-bottom: 0;
+        @media (max-width:1700px) {
+            font-size: 21px;
+            margin-top: 20px;
+        }
+        @media (max-width:1399px) {
+            font-size: 17px;
+        }
+        @media (max-width:1199px) {
+            font-size: 15px;
+        }
     }
 }
