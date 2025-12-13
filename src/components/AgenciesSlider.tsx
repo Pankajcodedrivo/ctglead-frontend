@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import rightArrow from "../assets/images/right-arrow.svg"
 import leftArrow from "../assets/images/left-arrow.svg"
 import profile from "../assets/images/profile.png"
+import AgenciesSlide from "./AgenciesSlide";
 
 const NextArrow = (props: any) => {
   const { onClick } = props;
@@ -47,36 +48,16 @@ const AgenciesSlider = () => {
         <div className="agencies-slider">
             <Slider {...settings}>
                 <div>
-                    <div className="agencies-innr">
-                        <figure><img src={profile} alt="" /></figure>
-                        <h3>Ryan Philips</h3>
-                        <h6>CEO</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus.</p>
-                    </div>
+                    <AgenciesSlide img={profile} title="Ryan Philips" subtitle="CEO" desc="Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus." />
                 </div>
                 <div>
-                    <div className="agencies-innr">
-                        <figure><img src={profile} alt="" /></figure>
-                        <h3>Ryan Philips</h3>
-                        <h6>CEO</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus.</p>
-                    </div>
+                    <AgenciesSlide img={profile} title="Ryan Philips" subtitle="CEO" desc="Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus." />
                 </div>
                 <div>
-                    <div className="agencies-innr">
-                        <figure><img src={profile} alt="" /></figure>
-                        <h3>Ryan Philips</h3>
-                        <h6>CEO</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus.</p>
-                    </div>
+                    <AgenciesSlide img={profile} title="Ryan Philips" subtitle="CEO" desc="Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus." />
                 </div>
                 <div>
-                    <div className="agencies-innr">
-                        <figure><img src={profile} alt="" /></figure>
-                        <h3>Ryan Philips</h3>
-                        <h6>CEO</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus.</p>
-                    </div>
+                    <AgenciesSlide img={profile} title="Ryan Philips" subtitle="CEO" desc="Lorem ipsum dolor sit amet consectetur. Accumsan sagittis augue sed viverra. Donec in sit risus sagittis faucibus adipiscing. Et malesuada morbi faucibus." />
                 </div>
             </Slider>
         </div>
