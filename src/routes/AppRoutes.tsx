@@ -6,6 +6,12 @@ import Footer from "../components/Footer";
 import Login from "../pages/auth/Login/Login";
 import VerifyEmail from "../pages/auth/Login/VerifyEmail"
 import VerifySecurityCode from "../pages/auth/Login/VerifySecurityCode"
+import MyProfile from "../pages/MyProfile";
+import MyLeads from "../pages/MyLeads";
+import MyQuotes from "../pages/MyQuotes";
+import SellPolicy from "../pages/SellPolicy";
+import ProfileDetails from "../pages/ProfileDetails";
+import MyQuotesDetails from "../pages/MyQuotesDetails";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -24,7 +30,15 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/verify-security-code" element={<VerifySecurityCode />} />
+        {/* my profile */}
+        <Route path="/my-profile" element={<MyProfile />} />
+        <Route path="/my-leads" element={<MyLeads />} />
+        <Route path="/my-quotes" element={<MyQuotes />} />
+        <Route path="/sell-policy" element={<SellPolicy />} />
+        <Route path="/profile-details" element={<ProfileDetails />} />
+        <Route path="/my-quotes-details" element={<MyQuotesDetails />} />
       </Routes>
+      
     </>
   );
 }
