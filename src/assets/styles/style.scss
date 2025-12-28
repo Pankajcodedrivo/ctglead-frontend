@@ -248,6 +248,23 @@ input.form-control:focus {
         border: 1px solid #BAC1D1;
         background: transparent;
         color: #070707;
+        &:hover {
+            background:#070707;
+            color: var(--color-white);
+            border-color: #070707;
+            img {
+                filter: brightness(100) invert(100%);
+            }
+        }
+        &:disabled,&.disabled {
+            background: #BABABA;
+            color: var(--color-white);
+            border-color: #BABABA;
+            cursor: not-allowed;
+            img {
+                filter: brightness(100) invert(100%);
+            }
+        }
     }
 }
 

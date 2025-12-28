@@ -5,6 +5,7 @@ import DashboardFooter from "../components/DashboardFooter";
 import email from "../assets/images/email.svg";
 import tel from "../assets/images/tel.svg";
 import AutoInsurance from "../components/AutoInsurance";
+import edit from "../assets/images/edit-icon.svg";
 
 const MyQuotesDetails = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,6 +18,7 @@ const MyQuotesDetails = () => {
                 <DashboardLeft isOpen={isOpen} closeMenu={closeMenu} />
                 <div className="dashboard-right">
                     <div className="card mb-40 card-innr">
+                        <span className="edit-icon"><img src={edit} alt="" /></span>
                         <div className="d-flex justify-content-between align-items-center flex-wrap gap-3">
                             <div>
                                 <div className="dash-hdr">

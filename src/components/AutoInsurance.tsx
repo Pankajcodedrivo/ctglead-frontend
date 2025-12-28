@@ -1,7 +1,6 @@
 
 import Slider from "react-slick";
-import arrowRight from "../assets/images/arrow-right.svg";
-import progLogo from "../assets/images/prog-logo.svg";
+import plus from "../assets/images/plus-icon.svg";
 
 const AutoInsurance = () => {
       const settings = {
@@ -54,7 +53,7 @@ const AutoInsurance = () => {
           </div>
           <div className="save-btn-wrapper">
             <button className="btn blue-btn">Save Draft</button>
-            <button className="btn btn-outline-grey">+ Add Vehicle</button>
+            <button className="btn btn-outline-grey"><span><img src={plus} alt="" /></span> Add Vehicle</button>
           </div>
         </div>
         <div className="vehicle-tab-innr">
@@ -157,26 +156,20 @@ const AutoInsurance = () => {
               </ul>
             </div>
             <div className="card-wrapper-btm">
-              <div className="row gx-5 gy-3 mb-32">
-                <div className="col-md-6">
-                  <div className="note-box">
-                    <label>Monthly Payment</label>
-                    <input type="text" className="form-control" placeholder="$" />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="note-box">
-                    <label>Pay in full</label>
-                    <input type="text" className="form-control" placeholder="$" />
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="note-box">
-                    <label>Additional Coverages/ Notes</label>
-                    <textarea className="form-control" placeholder="I added deducible for $250 since we do not offer $100. Thank you"></textarea>
-                  </div>
-                </div>
-              </div>
+              <ul className="coverage-grid mb-32">
+                <li>
+                  <p><strong>Monthly Payment</strong></p>
+                  <input type="text" className="form-control" placeholder="$" />
+                </li>
+                <li>
+                  <p><strong>Pay in full</strong></p>
+                  <input type="text" className="form-control" placeholder="$" />
+                </li>
+                <li className="w-100">
+                  <p><strong>Additional Coverages/ Notes</strong></p>
+                  <textarea className="form-control" placeholder="I added deducible for $250 since we do not offer $100. Thank you"></textarea>
+                </li>
+              </ul>
               <div className="text-end card-wrapper-btm-btn">
                 <button type="submit" className="btn green-btn bt-24">Send Quote</button>
               </div>

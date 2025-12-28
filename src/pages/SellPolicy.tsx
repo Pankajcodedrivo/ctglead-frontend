@@ -2,9 +2,6 @@ import { useState } from "react";
 import DashboardHeader from "../components/DashboardHeader";
 import DashboardLeft from "../components/DashboardLeft";
 import DashboardFooter from "../components/DashboardFooter";
-import pieChart from "../assets/images/pie-chart.png"
-import star from "../assets/images/star.svg"
-import cup from "../assets/images/cup.svg"
 
 const SellPolicy = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
