@@ -2,6 +2,7 @@
 @use './footer';
 @use './home';
 @use './login';
+@use './dashboard';
 // start varibales
 :root {
     // font family
@@ -22,6 +23,21 @@
     --color-3d:#3D3D3D;
     --color-7ff:#0057FF;
     --color-bff:#007BFF;
+    --color-ce:#CECECE;
+    --color-1c:#1c1c1c;
+     --font-24:24px;
+    @media only screen and (max-width: 1680px) {
+        --font-24:19px;
+    }
+    @media only screen and (max-width: 1399px) {
+        --font-24:17px;
+    }
+    @media only screen and (max-width: 1199px) {
+        --font-24:16px;
+    }
+    @media only screen and (max-width: 767px) {
+        --font-24:14px;
+    }
 }
 // end variables
 
@@ -46,6 +62,8 @@ body {
 * {
     padding: 0;
     margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-7ff) #fff;
 }
 
 h1,
@@ -198,6 +216,9 @@ input.form-control:focus {
             font-size: 15px;
         }
     }
+    &.bt-24 {
+        font-size: 24px;
+    }
     &.btn-primary {
         background: var(--color-btn);
         color: var(--color-white);
@@ -208,6 +229,42 @@ input.form-control:focus {
     &.btn-secondary {
         background: var(--color-bff);
         color: var(--color-white);
+    }
+    &.green-btn {
+        background: #2ECC71;
+        color: var(--color-white);
+        &:hover {
+            background: var(--color-black);
+        }
+    }
+    &.blue-btn {
+        background: var(--color-7ff);
+        color: var(--color-white);
+        &:hover {
+            background: var(--color-black);
+        }
+    }
+    &.btn-outline-grey {
+        border: 1px solid #BAC1D1;
+        background: transparent;
+        color: #070707;
+        &:hover {
+            background:#070707;
+            color: var(--color-white);
+            border-color: #070707;
+            img {
+                filter: brightness(100) invert(100%);
+            }
+        }
+        &:disabled,&.disabled {
+            background: #BABABA;
+            color: var(--color-white);
+            border-color: #BABABA;
+            cursor: not-allowed;
+            img {
+                filter: brightness(100) invert(100%);
+            }
+        }
     }
 }
 
@@ -411,7 +468,7 @@ input.form-control:focus {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background:  var(--color-7bf);
+    background:  var(--color-7ff);
     @media only screen and (max-width: 575px) {
         width: 9px;
         height: 9px;
@@ -419,7 +476,7 @@ input.form-control:focus {
 }
 }
 input:checked ~ .checkmark {
-    border-color: var(--color-7bf);
+    border-color: var(--color-7ff);
 }
 
 input:checked ~ .checkmark:after {
@@ -490,7 +547,7 @@ textarea {
 }
 select {
     &.form-control {
-        background: url('../images/arrow-down.svg') no-repeat;
+        background: url('../images/down-arrow.svg') no-repeat;
         background-size: auto;
         background-position: right 27px center;
         font-weight: 400;
