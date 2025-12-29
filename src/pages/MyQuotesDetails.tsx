@@ -56,7 +56,9 @@ const MyQuotesDetails = () => {
                             <option value="5">Renters</option>
                         </select>
                     </div>
-                    <AutoInsurance />
+                    <form action="">
+                        <AutoInsurance />
+                    </form>
                 </div>
             </div>
             <DashboardFooter />

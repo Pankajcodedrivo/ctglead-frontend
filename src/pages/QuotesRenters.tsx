@@ -24,7 +24,9 @@ const QuotesRenters = () => {
                             <option value="5">Condo</option>
                         </select>
                     </div>
-                    <Renters/>
+                    <form action="">
+                        <Renters/>
+                    </form>
                 </div>
             </div>
             <DashboardFooter />

@@ -82,10 +82,10 @@ const ProfileDetails = () => {
                                                 <li> Main Insured</li>
                                             </ul>
                                         </div>
-                                        <div className="row">
-                                            <div className="col-md-8">
+                                        <div className="row g-4">
+                                            <div className="col-xl-8">
                                                 <div className="row">
-                                                    <div className="col-md-6">
+                                                    <div className="col-sm-6">
                                                         <ul className="pro-details-list">
                                                             <li>
                                                                 <span><img src={icn1} alt="" /></span>
@@ -105,7 +105,7 @@ const ProfileDetails = () => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="col-md-6">
+                                                    <div className="col-sm-6">
                                                         <ul className="pro-details-list">
                                                             <li>
                                                                 DOB: 05/12/1987
@@ -137,7 +137,7 @@ const ProfileDetails = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="col-md-4">
+                                            <div className="col-xl-4">
                                                 <div className="shadow-box">
                                                     <h4 className="mb-4">Insurance History</h4>
                                                     <ul className="pref-list mb-4">
@@ -177,7 +177,7 @@ const ProfileDetails = () => {
                                             <div className="tab-pane active" id="auto">
                                                 <div className="acc-box">
                                                     <div className="row m-0">
-                                                        <div className="col-xl-4 col-md-6 acc-box-innr">
+                                                        <div className="col-xl-4 acc-box-innr">
                                                             <div className="acc-hdr mb-4">
                                                                 <span>Vehicle 1</span>
                                                                 <h5>2018 Honda Accord</h5>
@@ -275,7 +275,7 @@ const ProfileDetails = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="col-xl-4 col-md-6 acc-box-innr">
+                                                        <div className="col-xl-4 acc-box-innr">
                                                             <div className="acc-hdr mb-4">
                                                                 <span>Vehicle 2</span>
                                                                 <h5>2021 For Explorer</h5>
@@ -349,7 +349,7 @@ const ProfileDetails = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="col-xl-4 col-md-6 acc-box-innr">
+                                                        <div className="col-xl-4 acc-box-innr">
                                                             <div className="acc-hdr mb-4">
                                                                 <span>Vehicle 3</span>
                                                                 <h5>2017 Toyota RAV4</h5>
