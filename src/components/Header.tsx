@@ -6,7 +6,7 @@ const Header = () => {
         <div className="container">
           <div className="header-otr">
               <Link to="/" className="logo"><img src={logo} alt="" /></Link>
-              <Link to="/" className="btn btn-primary"> Login</Link>
+              <Link to="/login" className="btn btn-primary"> Login</Link>
           </div>
         </div>
     </div>
