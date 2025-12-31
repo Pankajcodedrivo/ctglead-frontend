@@ -1,0 +1,7 @@
+export const VALIDATION_MESSAGES = {
+  EMAIL_REQUIRED: "Email address is required",
+  EMAIL_INVALID: "Please enter a valid email address",
+  PASSWORD_REQUIRED: "Password field is required",
+  PASSWORD_MIN: "Must be 8 or more than 8 characters",
+  PASSWORD_INVALID: "Please enter valid password",
+};

@@ -18,7 +18,7 @@ const Newsletter = () => {
                   today and start getting verified compliant quote
                   ready profiles your agency deserves.</p>
               </div>
-              <Link to="/" className="btn btn-primary">Talk to a Specialist</Link>  
+              <Link to="/Login" className="btn btn-primary">Talk to a Specialist</Link>  
             </div>
             <div className="col-md-4">
               <div className="image-innr">

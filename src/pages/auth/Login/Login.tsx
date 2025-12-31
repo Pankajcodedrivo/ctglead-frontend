@@ -4,62 +4,114 @@ import LeftPanel from "../../../components/LeftPanel";
 import SubFooter from "../../../components/SubFooter";
 import SubHeader from "../../../components/SubHeader";
 import eye from "../../../assets/images/eye-off.svg"
+import eyeOn from "../../../assets/images/eye-on.jpeg"
 import loginImg from "../../../assets/images/login-img.png"
+import Input from "../../../components/UI/input/Input";
+import { useState } from "react";
+import { useLogin } from "./useLogin";
 
 const Login = () => {
-    return (
-        <section className="auth-wrapper">
-            <div className="right-panel">
-                <div className="form-top">
-                    <SubHeader />
-                    <form action="">
-                        <div className="auth-form">
-                            <div className="mb-40 lead-top">
-                                <div className="lead-top-left">
-                                    <h4>Welcome Back!</h4>
-                                    <p>Enter your email and password to access your account.</p>
-                                </div>
-                                <div className="lead-top-right">
-                                    <p>Already have an account? <Link to="/">Sign In</Link></p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <div className="form-group">
-                                        <label className="form-label float">Email Address *</label>
-                                        <input type="email" className="form-control" id="email" placeholder="Enter Email" name="email" />
-                                    </div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="form-group">
-                                        <label className="form-label float">Password *</label>
-                                        <div className="password">
-                                            <input type="password" className="form-control" placeholder="Enter Password" />
-                                            <span className="password-icon">
-                                                <img src={eye} alt="" />
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="remember-innr">
-                                <label className="checkbox-container">Remember Me
-                                    <input type="checkbox" />
-                                    <span className="checkmark"></span>
-                                </label>
-                                <Link to="/" className="forgot-password">Forgot Password?</Link>
-                            </div>
-                            <div className="text-center mt-40">
-                                <Link to="/" className="btn btn-secondary sm">Login <span><img src={rightArrow} alt="" /></span></Link>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <SubFooter />
-            </div>
-            <LeftPanel title="“Price is what you pay. Value is what you get.”" subtitle="Warren Buffett" img={loginImg} />
-        </section>
-    )
-};
+  const { loginFormik } = useLogin();
+  const [remember, setRemember] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+  const togglePassword = () => {
+    setIsPasswordVisible((prev) => !prev);
+  };
+
+  return (
+    <section className="auth-wrapper">
+      <div className="right-panel">
+        <div className="form-top">
+          <SubHeader />
+
+          <form onSubmit={loginFormik.handleSubmit}>
+            <div className="auth-form">
+
+              {/* Header */}
+              <div className="mb-40 lead-top">
+                <div className="lead-top-left">
+                  <h4>Welcome Back!</h4>
+                  <p>Enter your email and password to access your account.</p>
+                </div>
+              </div>
+
+              {/* Inputs */}
+              <div className="row">
+
+                {/* Email */}
+                <div className="col-lg-6">
+                  <Input
+                    id="email"
+                    type="email"
+                    name="email"
+                    label="Email Address *"
+                    placeholder="Enter Email"
+                    onChange={loginFormik.handleChange}
+                    value={loginFormik.values.email}
+                    errorMsg={loginFormik.errors.email}
+                  />
+                </div>
+
+                {/* Password */}
+                <div className="col-lg-6">
+                  <Input
+                    id="password"
+                    type={isPasswordVisible ? "text" : "password"}
+                    name="password"
+                    label="Password *"
+                    placeholder="Enter Password"
+                    onChange={loginFormik.handleChange}
+                    value={loginFormik.values.password}
+                    errorMsg={loginFormik.errors.password}
+                    rightIcon={
+                      <img
+                        src={isPasswordVisible ? eyeOn : eye}
+                        alt="toggle"
+                        onClick={togglePassword}
+                        style={{ cursor: "pointer" }}
+                      />
+                    }
+                  />
+                </div>
+              </div>
+
+              {/* Remember + Forgot */}
+              <div className="remember-innr">
+                <label className="checkbox-container">
+                  Remember Me
+                  <input
+                    type="checkbox"
+                    checked={remember}
+                    onChange={(e) => setRemember(e.target.checked)}
+                  />
+                  <span className="checkmark"></span>
+                </label>
+
+                <Link to="/verify-email" className="forgot-password">
+                  Forgot Password?
+                </Link>
+              </div>
+
+              {/* Login Button */}
+              <div className="text-center mt-40">
+                <button className="btn btn-secondary sm" type="submit">
+                  Login <span><img src={rightArrow} alt="" /></span>
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+        <SubFooter />
+      </div>
+
+      <LeftPanel
+        title="“Price is what you pay. Value is what you get.”"
+        subtitle="Warren Buffett"
+        img={loginImg}
+      />
+    </section>
+  );
+};
 export default Login;

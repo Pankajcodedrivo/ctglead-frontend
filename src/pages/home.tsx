@@ -14,7 +14,7 @@ const Home = () => {
               <h1>The Future of Insurance Leads Starts Here.</h1>
               <h6>Leads Evolved. Profiles that Quote.</h6>
               <p>Every profile is quote-ready with verified phone, email, address, VIN numbers, and driver license details. CTG Lead is fully compliant, with consumer consent and signed authorization for quoting and credit checks.</p>
-              <Link to="/" className="btn btn-primary">Get Started Today</Link>
+              <Link to="/login" className="btn btn-primary">Get Started Today</Link>
             </div>
             <div className="col-lg-5">
               <div className="ban-img">
@@ -154,5 +154,4 @@ const Home = () => {
     </>
   )
 };
-
 export default Home;
