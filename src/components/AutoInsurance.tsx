@@ -37,7 +37,7 @@ const AutoInsurance = () => {
                 },
             },
             {
-                breakpoint: 360,
+                breakpoint: 420,
                 settings: {
                     slidesToShow: 2,
                 },

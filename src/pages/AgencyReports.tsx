@@ -51,39 +51,39 @@ const AgencyReports = () => {
                         </div>
                     </div>
                     <div className="agency-reports-box">
-                        <div className="row">
-                            <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
+                        <div className="row g-4">
+                            <div className="col-xl-2 col-lg-4 col-6">
                                 <div className="agency-reports-box-innr">
                                     <h2>320</h2>
                                     <p className="mb-0">Total Leads</p>
                                 </div>
                             </div>
-                            <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
+                            <div className="col-xl-2 col-lg-4 col-6">
                                 <div className="agency-reports-box-innr">
                                     <h2>240</h2>
                                     <p className="mb-0">Quotes Sent</p>
                                 </div>
                             </div>
-                            <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
+                            <div className="col-xl-2 col-lg-4 col-6">
                                 <div className="agency-reports-box-innr">
                                     <h2>56</h2>
                                     <p className="mb-0">Sold Policies</p>
                                 </div>
                             </div>
-                            <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
+                            <div className="col-xl-2 col-lg-4 col-6">
                                 <div className="agency-reports-box-innr">
                                     <h2>32%</h2>
                                     <p className="mb-0">Conversion Rate</p>
                                 </div>
                             </div>
-                            <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
+                            <div className="col-xl-2 col-lg-4 col-6">
                                 <div className="agency-reports-box-innr">
                                     <h2>1.4 H</h2>
                                     <p className="mb-0">Average Response
                                         Time</p>
                                 </div>
                             </div>
-                            <div className="col-xxl-2 col-xl-3 col-lg-4 col-md-6">
+                            <div className="col-xl-2 col-lg-4 col-6">
                                 <div className="agency-reports-box-innr">
                                     <h2>24</h2>
                                     <p className="mb-0">Declines</p>

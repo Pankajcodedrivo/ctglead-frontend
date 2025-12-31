@@ -327,7 +327,7 @@
 .otp-input:focus {
     border-color: #2196f3;
     box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 .security-code {
@@ -372,7 +372,7 @@
 
         a {
             font-weight: 600;
-            color: #1C1C1C;
+            color: var(--color-1c);
             text-decoration: underline;
             &:hover {
                 color: var(--color-blue);
@@ -400,7 +400,7 @@
     .lead-top-right {
         margin-top: 7px;
         p {
-            color: #4B4B4B;
+            color: var(--color-4b);
             font-size: 14px;
             font-style: normal;
             a {

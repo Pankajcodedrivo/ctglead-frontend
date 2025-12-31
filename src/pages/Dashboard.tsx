@@ -25,10 +25,10 @@ const MyProfile = () => {
                             <h4 className="sub-title">Lead Conversion</h4>
                             <div className="dash-cmn-box">
                                 <div className="row pie-chart align-items-center">
-                                    <div className="col-md-6">
+                                    <div className="col-6">
                                         <figure><img src={pieChart} alt="" /></figure>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-6">
                                         <ul className="pie-chart-list">
                                             <li>
                                                 <div className="pie-chart-left">
