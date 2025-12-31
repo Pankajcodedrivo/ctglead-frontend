@@ -19,6 +19,7 @@ import QuotesRenters from "../pages/QuotesRenters";
 import Messages from "../pages/Messages";
 import AgencyReports from "../pages/AgencyReports";
 import TeamManagement from "../pages/TeamManagement";
+import Modal from "../pages/Modal";
 
 
 export default function AppRoutes() {
@@ -52,6 +53,7 @@ export default function AppRoutes() {
         <Route path="/messages" element={<Messages />} />
         <Route path="/agency-reports" element={<AgencyReports />} />
         <Route path="/team-management" element={<TeamManagement />} />
+        <Route path="/modal" element={<Modal />} />
       </Routes>
       
     </>
