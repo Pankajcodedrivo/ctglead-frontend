@@ -242,6 +242,13 @@ input.form-control:focus {
     &.btn-secondary {
         background: var(--color-bff);
         color: var(--color-white);
+        &.style2 {
+            background: #BABABA;
+            color: var(--color-white);
+            img {
+                filter: brightness(100);
+            }
+        }
     }
     &.green-btn {
         background: #2ECC71;
