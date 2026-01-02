@@ -5,10 +5,21 @@ import { Link } from "react-router-dom";
 import innerLogo from "../assets/images/inner-logo.svg"
 import notificationIcon from "../assets/images/notification-icon.svg"
 import profile from "../assets/images/profile-img.png"
-import list from "../assets/images/list.svg"
-import searchIcon from "../assets/images/search-icon.svg"
 import menu from "../assets/images/menu.png"
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../store/auth.store";
+
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ toggleMenu }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    function logoutHandler() {
+        dispatch(logOut());
+        localStorage.clear();
+        navigate("/login");
+    }
+
     return (
         <div className="dashboard-header">
             <div className="dashboard-header-left">
@@ -49,10 +60,10 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ toggleMenu }) => {
                                         Settings
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to="/">
-                                        Logout
-                                    </Link>
+                               <li>
+                                <Link to="/" onClick={logoutHandler}>
+                                    Logout
+                                </Link>
                                 </li>
                             </ul>
                         </div>

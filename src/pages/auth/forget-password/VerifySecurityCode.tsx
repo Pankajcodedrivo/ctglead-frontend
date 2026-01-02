@@ -40,7 +40,7 @@ const Login = () => {
                 </div>
                 <SubFooter />
             </div>
-            <LeftPanel title="“We’re setting the standard for what insurance tech should look like.”" subtitle="Selena, Founder of CTG Quotes" img={img3} />
+            <LeftPanel title="We’re setting the standard for what insurance tech should look like." subtitle="Selena, Founder of CTG Quotes" img={img3} />
         </section>
     )
 };

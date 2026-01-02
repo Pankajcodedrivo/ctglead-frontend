@@ -107,7 +107,7 @@ const Login = () => {
       </div>
 
       <LeftPanel
-        title="“Price is what you pay. Value is what you get.”"
+        title="Price is what you pay. Value is what you get."
         subtitle="Warren Buffett"
         img={loginImg}
       />

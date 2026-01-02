@@ -33,7 +33,7 @@ const Login = () => {
                 </div>
                 <SubFooter />
             </div>
-            <LeftPanel title="“Do something today that your future self will thank you for.”" subtitle="Sean Patrick Flanery" img={img2} />
+            <LeftPanel title="Do something today that your future self will thank you for." subtitle="Sean Patrick Flanery" img={img2} />
         </section>
     )
 };
