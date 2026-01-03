@@ -37,11 +37,6 @@ export const updateUser = catchAsync(async (id, values: IUsersRoleTable) => {
   return data;
 });
 
-export const updateProfile = catchAsync(async (values) => {
-  const data = await httpsCall.patch(`/admin/profile/update`, values);
-  return data;
-});
-
 export const updateProfileImage = catchAsync(async (values) => {
   const data = await httpsCall.patch(`/admin/profile/image-update`, values);
   return data;
@@ -53,5 +48,19 @@ export const addAmount = catchAsync(async (selectedUserId, values: any) => {
     `/admin/user-management/add-amount/${selectedUserId}`,
     values
   );
+  return data;
+});
+
+// OWN PROFILE
+
+// update account 
+export const updateProfile = catchAsync(async (values) => {
+  const data = await httpsCall.patch(`/lead/profile/update`, values);
+  return data;
+});
+
+// delete account 
+export const deleteAccount = catchAsync(async () => {
+  const data = await httpsCall.delete(`/lead/profile/delete`);
   return data;
 });

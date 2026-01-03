@@ -13,7 +13,6 @@ import { logOut } from "../store/auth.store";
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ toggleMenu }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
     function logoutHandler() {
         dispatch(logOut());
         localStorage.clear();
@@ -38,7 +37,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ toggleMenu }) => {
                             <option value="">Paused</option>
                         </select>
                     </div>
-                    <Link to="/" className="notification-icon">
+                    <Link to="/notifications" className="notification-icon">
                         <img src={notificationIcon} alt="" />
                     </Link>
                     <div className="profile dropdown">
@@ -46,17 +45,17 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ toggleMenu }) => {
                         <div className="dropdown-menu">
                             <ul>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/my-account">
                                         My Account
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/security">
                                         Security
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/">
+                                    <Link to="/settings">
                                         Settings
                                     </Link>
                                 </li>

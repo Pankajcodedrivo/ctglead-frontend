@@ -3,6 +3,7 @@
 @use './home';
 @use './login';
 @use './dashboard';
+@use './modal';
 // start varibales
 :root {
     // font family
@@ -219,6 +220,15 @@ input.form-control:focus {
             font-size: 15px;
         }
     }
+    &.md {
+        font-size: 20px;
+        @media (max-width:991px) {
+            font-size: 16px;
+        }
+        @media (max-width:575px) {
+            font-size: 15px;
+        }
+    }
     &.bt-24 {
         font-size: 24px;
     }
@@ -232,11 +242,26 @@ input.form-control:focus {
     &.btn-secondary {
         background: var(--color-bff);
         color: var(--color-white);
+        &.style2 {
+            background: #BABABA;
+            color: var(--color-white);
+            img {
+                filter: brightness(100);
+            }
+        }
     }
     &.green-btn {
         background: #2ECC71;
         color: var(--color-white);
         &:hover {
+            background: var(--color-black);
+        }
+    }
+    &.btn-red {
+        background: var(--color-btn);
+        color: var(--color-white);
+        &:hover {
+            border-color: transparent;
             background: var(--color-black);
         }
     }

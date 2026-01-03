@@ -36,6 +36,13 @@ export const forgotPasswordApi = catchAsync(
   }
 );
 
+export const verifySecurityCodeApi = catchAsync(
+  async (values: ForgotPaawordData) => {
+    const data = await httpsCall.post(`/lead/forgot-password`, values);
+    return data;
+  }
+);
+
 export const resetPasswordApi = catchAsync(
   async (values: ResetPasswordData) => {
     const data = await httpsCall.patch(`/lead/reset-password`, values);

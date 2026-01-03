@@ -16,11 +16,9 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logOut } from "../store/auth.store";
 
-
 const DashboardLeft: React.FC<DashboardLeftProps> = ({ isOpen, closeMenu }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
     function logoutHandler() {
         dispatch(logOut());
         localStorage.clear();
@@ -69,7 +67,7 @@ const DashboardLeft: React.FC<DashboardLeftProps> = ({ isOpen, closeMenu }) => {
             </ul>
             <ul>
                 <li>
-                    <Link to="/">
+                    <Link to="/support">
                         <span><img src={dIcon7} alt="" /></span>
                         Support
                     </Link>

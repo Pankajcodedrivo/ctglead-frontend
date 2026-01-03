@@ -19,6 +19,12 @@ import Messages from "../pages/Messages";
 import AgencyReports from "../pages/AgencyReports";
 import TeamManagement from "../pages/TeamManagement";
 import AuthLayout from "../layout/AuthLayout";
+import Support from "../pages/Support";
+import Notifications from "../pages/Notifications";
+import MyAccount from "../pages/myAccount/MyAccount";
+import Security from "../pages/Security";
+import Settings from "../pages/Settings";
+import Modal from "../pages/Modal";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -37,6 +43,7 @@ export default function AppRoutes() {
 
         {/* Protected Routes */}
         <Route element={<AuthLayout />}>
+        {/* Dashboard */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/my-leads" element={<MyLeads />} />
           <Route path="/my-quotes" element={<MyQuotes />} />
@@ -50,9 +57,16 @@ export default function AppRoutes() {
           <Route path="/messages" element={<Messages />} />
           <Route path="/agency-reports" element={<AgencyReports />} />
           <Route path="/team-management" element={<TeamManagement />} />
+           {/* other screen */}
+          <Route path="/support" element={<Support />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/my-account" element={<MyAccount />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/settings" element={<Settings />} />
+          {/* modal */}
+          <Route path="/modal" element={<Modal />} />
         </Route>
       </Routes>
-
       {showHeaderFooter && <Footer />}
     </>
   );

@@ -9,6 +9,7 @@ export type User = {
   gender: string;
   phoneNumber: string;
   role: string;
+  address: string;
 
   notification: boolean;
   isEmailVerified: boolean;
