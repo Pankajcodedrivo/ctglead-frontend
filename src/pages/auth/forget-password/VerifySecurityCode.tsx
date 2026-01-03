@@ -34,7 +34,6 @@ const VerifySecurityCode = () => {
         console.error(error);
   }
 };
-
 return (
     <section className="auth-wrapper">
       <div className="right-panel">

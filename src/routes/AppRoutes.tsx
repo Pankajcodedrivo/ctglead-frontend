@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Login from "../pages/auth/Login/Login";
 import VerifyEmail from "../pages/auth/forget-password/VerifyEmail";
 import VerifySecurityCode from "../pages/auth/forget-password/VerifySecurityCode";
+import ResetPassword from "../pages/auth/forget-password/ResetPassword";
 import Dashboard from "../pages/Dashboard";
 import MyLeads from "../pages/MyLeads";
 import MyQuotes from "../pages/MyQuotes";
@@ -40,6 +41,7 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/verify-security-code" element={<VerifySecurityCode />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* Protected Routes */}
         <Route element={<AuthLayout />}>
