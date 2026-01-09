@@ -9,22 +9,21 @@ export const useVerifySecurityCode = () => {
 
 const formik = useFormik({
     initialValues: {
-      otp: ["", "", "", ""],
+      otp: "",
     },
     validationSchema: yup.object({
       otp: yup
-        .array()
-        .test(
-          "otp-complete",
-          "Please enter the 4-digit security code",
-          (otp) => otp?.every((digit) => digit && digit.length === 1)
-        ),
+        .string()
+        .required("Please enter the 4-digit security code")
+        .matches(/^\d{4}$/, "Please enter the 4-digit security code"),
     }),
-    onSubmit: async (values) => {
-      const code = values.otp.join("");
-      await verifySecurityCodeApi({ email, code });
-      navigate("/reset-password");
-    },
+   onSubmit: async (values) => {
+    const data = {
+      email, otp: values.otp
+    }
+    await verifySecurityCodeApi(data);
+    navigate("/reset-password");
+  },
   });
   return { formik, email };
 };

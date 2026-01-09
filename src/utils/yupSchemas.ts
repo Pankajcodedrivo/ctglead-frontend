@@ -7,6 +7,20 @@ export const emailSchema = yup
   .email(VALIDATION_MESSAGES.EMAIL_INVALID)
   .required(VALIDATION_MESSAGES.EMAIL_REQUIRED);
 
+export const oldPasswordSchema = yup
+  .string()
+  .trim()
+  .min(8, VALIDATION_MESSAGES.PASSWORD_MIN)
+  .matches(/\w/, VALIDATION_MESSAGES.PASSWORD_INVALID)
+  .required(VALIDATION_MESSAGES.OLD_PASSWORD_REQUIRED);
+
+export const newPasswordSchema = yup
+  .string()
+  .trim()
+  .min(8, VALIDATION_MESSAGES.PASSWORD_MIN)
+  .matches(/\w/, VALIDATION_MESSAGES.PASSWORD_INVALID)
+  .required(VALIDATION_MESSAGES.NEW_PASSWORD_REQUIRED);
+
 export const passwordSchema = yup
   .string()
   .trim()

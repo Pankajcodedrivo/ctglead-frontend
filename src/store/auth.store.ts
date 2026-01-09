@@ -16,6 +16,12 @@ export type User = {
   isAccountVerified: boolean;
   profileimageurl: string;
   about: any;
+
+  emailNotification: boolean;
+  textNotification: boolean;
+  pushNotification: boolean;
+  communicationPref: string;
+
 };
 
 export type AuthState = {

@@ -23,7 +23,7 @@ import AuthLayout from "../layout/AuthLayout";
 import Support from "../pages/Support";
 import Notifications from "../pages/Notifications";
 import MyAccount from "../pages/myAccount/MyAccount";
-import Security from "../pages/Security";
+import Security from "../pages/security/Security";
 import Settings from "../pages/Settings";
 import Modal from "../pages/Modal";
 

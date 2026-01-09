@@ -10,31 +10,34 @@ const VerifySecurityCode = () => {
   const { formik, email } = useVerifySecurityCode();
   const { resendCode } = useResendCode();
 
-  // Handle OTP change
+  // Handle OTP change (STRING based)
   const handleOtpChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
   ) => {
     const value = e.target.value.replace(/[^0-9]/g, "");
-    const otp = [...formik.values.otp];
-    otp[index] = value;
+
+    const otpArr = formik.values.otp.split("");
+    otpArr[index] = value;
+
+    const otp = otpArr.join("").slice(0, 4);
     formik.setFieldValue("otp", otp);
 
     if (value && index < 3) {
-      const nextInput = document.getElementById(`otp-${index + 1}`);
-      nextInput?.focus();
+      document.getElementById(`otp-${index + 1}`)?.focus();
     }
   };
 
   // Resend code
   const handleResendCode = async () => {
-  try {
-    await resendCode();
-  } catch (error) {
-        console.error(error);
-  }
-};
-return (
+    try {
+      await resendCode();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
     <section className="auth-wrapper">
       <div className="right-panel">
         <div className="form-top">
@@ -54,31 +57,29 @@ return (
                 <div className="col-md-12">
                   <div className="text-center security-code">
                     <div className="otp-container">
-                      {formik.values.otp.map((digit, index) => (
+                      {[0, 1, 2, 3].map((_, index) => (
                         <input
                           key={index}
                           id={`otp-${index}`}
                           type="text"
                           maxLength={1}
                           className="otp-input"
-                          value={digit}
+                          value={formik.values.otp[index] || ""}
                           onChange={(e) => handleOtpChange(e, index)}
                         />
                       ))}
                     </div>
-                    {formik.errors.otp && (
-                    <p className="text-danger mt-2">
+
+                    {formik.touched.otp && formik.errors.otp && (
+                      <p className="text-danger mt-2">
                         {formik.errors.otp}
-                    </p>
+                      </p>
                     )}
-                    
+
                     <p className="mt-10">
                       We sent a code to{" "}
                       <span>
-                        {email.replace(
-                          /(.{2}).+(@.+)/,
-                          "$1********$2"
-                        )}
+                        {email.replace(/(.{2}).+(@.+)/, "$1********$2")}
                       </span>
                     </p>
                   </div>
@@ -93,18 +94,15 @@ return (
 
               <ul className="resend-code">
                 <li>
-                  <li>
-                    <Link
-                        to="/"
-                        onClick={(e) => {
-                        e.preventDefault();
-                        handleResendCode();
-                        }}
-                    >
-                        Resend Code
-                    </Link>
-                </li>
-
+                  <Link
+                    to="/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleResendCode();
+                    }}
+                  >
+                    Resend Code
+                  </Link>
                 </li>
                 <li>
                   <Link to="/">Get Help</Link>

@@ -6,9 +6,10 @@ import DashboardFooter from "../components/DashboardFooter";
 import SettingsBox from "../components/SettingsBox";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logOut } from "../store/auth.store";
+import { logOut, setUser } from "../store/auth.store";
 import { confirmDelete } from "../utils/confirmDeleteModal";
-import { deleteAccount } from "../service/apis/user.api";
+import { deleteAccount, updateProfile } from "../service/apis/user.api";
+import { useSelector } from "react-redux";
 
 const Settings = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -16,6 +17,16 @@ const Settings = () => {
     const closeMenu = () => setIsOpen(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const user = useSelector((state: any) => state.authSlice.user);
+    const [notifications, setNotifications] = useState({
+    emailNotification: user?.emailNotification ?? true,
+    textNotification: user?.textNotification ?? true,
+    pushNotification: user?.pushNotification ?? true,
+    });
+    const [communicationPref, setCommunicationPref] = useState(
+    user?.communicationPref ?? "email"
+    );
+
 
     // Logout handler
     function logoutHandler() {
@@ -24,12 +35,12 @@ const Settings = () => {
         navigate("/login");
     }
     // Delete account
-    const handleDeleteAccount = async () => {
+const handleDeleteAccount = async () => {
     const confirmed = await confirmDelete({
     title: "Delete Account?",
     description: "This will permanently delete your account and all associated data.",
     });
-  if (!confirmed) return;
+if (!confirmed) return;
   try {
    await deleteAccount();
     dispatch(logOut());
@@ -37,6 +48,59 @@ const Settings = () => {
     navigate("/login");
   } catch (error) {
     console.error("Account deletion failed", error);
+  }
+};
+
+// Handle notification settings
+const handleNotificationToggle = async (
+  key: "emailNotification" | "textNotification" | "pushNotification",
+  value: boolean
+) => {
+  // optimistic UI update
+  setNotifications((prev) => ({
+    ...prev,
+    [key]: value,
+  }));
+
+  try {
+    const response = await updateProfile({
+      [key]: value,
+    });
+
+    // sync redux user
+    dispatch(setUser(response?.data?.user));
+  } catch (error) {
+    console.error("Failed to update notification setting", error);
+
+    // rollback on failure (important)
+    setNotifications((prev) => ({
+      ...prev,
+      [key]: !value,
+    }));
+  }
+};
+
+// Handle communication pref
+const handleCommunicationPrefChange = async (
+  e: React.ChangeEvent<HTMLSelectElement>
+) => {
+  const value = e.target.value;
+
+  // optimistic update
+  setCommunicationPref(value);
+
+  try {
+    const response = await updateProfile({
+      communicationPref: value,
+    });
+
+    // sync redux user
+    dispatch(setUser(response?.data?.user));
+  } catch (error) {
+    console.error("Failed to update communication preference", error);
+
+    // rollback on failure
+    setCommunicationPref(user?.communicationPref ?? "email");
   }
 };
 
@@ -48,7 +112,7 @@ const Settings = () => {
                 <div className="dashboard-right">
                     <div className="dash-hdr">
                         <h3>Settings</h3>
-                        <p className="font-16">The settings page allows users to manage notifications, communication preferences, language, theme, and quick links. This page is strictly for user preferences, not visibility, mode selection, or profile details.</p>
+                        <p className="font-16">The settings page allows users to manage notifications, communication preferences, and quick links. This page is strictly for user preferences, not visibility, mode selection, or profile details.</p>
                     </div>
                     <div className="shadow-box blue-border mb-4">
                         <div className="settings-hdr">
@@ -56,10 +120,27 @@ const Settings = () => {
                             <p>Use the switches below to control how you want to stay updated.</p>
                         </div>
                         <div className="settings-box-otr">
-                            <SettingsBox title="Email Notifications" desc="Receive updates about quotes and uploaded documents" />
-                            <SettingsBox title="Text Notifications" desc="Get SMS alerts for new quotes or document reminders" />
-                            <SettingsBox title="New Quote Alerts" desc="Notified when carriers return new quote results" />
-                            <SettingsBox title="Document Reminders" desc="Alerts for missing or incomplete uploads" />
+                            <SettingsBox
+                            title="Email Notifications"
+                            desc="Receive updates about quotes and uploaded documents"
+                            value={notifications.emailNotification}
+                            onToggle={(value) => handleNotificationToggle("emailNotification", value)}
+                            />
+
+                            <SettingsBox
+                            title="Text Notifications"
+                            desc="Get SMS alerts for new quotes or document reminders"
+                            value={notifications.textNotification}
+                            onToggle={(value) => handleNotificationToggle("textNotification", value)}
+                            />
+
+                            <SettingsBox
+                            title="Push Notifications"
+                            desc="Notified in app notification"
+                            value={notifications.pushNotification}
+                            onToggle={(value) => handleNotificationToggle("pushNotification", value)}
+                            />
+
                         </div>
                     </div>
                     <div className="shadow-box blue-border mb-4">
@@ -71,10 +152,13 @@ const Settings = () => {
                             <p>Preferred Contact Method</p>
                             <div className="form-group mb-0 w-75">
                                 <label className="form-label float">Contact Method</label>
-                                <select name="" id="" className="form-control">
-                                    <option value="1" disabled>Email</option>
-                                    <option value="1">Email</option>
-                                    <option value="1">Email</option>
+                                <select
+                                className="form-control"
+                                value={communicationPref}
+                                onChange={handleCommunicationPrefChange}
+                                >
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
                                 </select>
                             </div>
                         </div>
