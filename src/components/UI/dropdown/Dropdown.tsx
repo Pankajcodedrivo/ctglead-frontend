@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { useTranslation } from "react-i18next";
 import classes from "./Dropdown.module.scss";
 
@@ -11,7 +11,7 @@ interface Props {
   dropdownData: TOptionItem[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-const Dropdown: React.FC<Props> = (props) => {
+const Dropdown: React.FC<Props> = (props:any) => {
   //   const selectRef = useRef<HTMLSelectElement | null>(null);
 
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ const Dropdown: React.FC<Props> = (props) => {
         id='category'
         onChange={props.onChange}
       >
-        {props.dropdownData.map((item, index) => (
+        {props.dropdownData.map((item:any, index:any) => (
           <option key={`${item.label + index}`} value={item.value}>
             {t(`${item.label}`)}
           </option>

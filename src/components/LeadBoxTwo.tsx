@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import locationIcon from "../assets/images/location.svg"
 import icon2 from "../assets/images/icon-2.svg"
 const LeadBoxTwo = () => {

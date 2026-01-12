@@ -20,7 +20,7 @@ import Messages from "../pages/Messages";
 import AgencyReports from "../pages/AgencyReports";
 import TeamManagement from "../pages/TeamManagement";
 import AuthLayout from "../layout/AuthLayout";
-import Support from "../pages/Support";
+import Support from "../pages/support/Support";
 import Notifications from "../pages/Notifications";
 import MyAccount from "../pages/myAccount/MyAccount";
 import Security from "../pages/security/Security";

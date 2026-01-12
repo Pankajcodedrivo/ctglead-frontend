@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import car from "../assets/images/car.svg"
 import starwh from "../assets/images/star-wh.svg"
 import locationIcon from "../assets/images/location.svg"

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import locationIcon from "../assets/images/location.svg"
 import crosswh from "../assets/images/cross-wh.svg"
 import homeIcon from "../assets/images/home.svg"

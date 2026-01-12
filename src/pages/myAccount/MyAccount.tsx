@@ -59,7 +59,7 @@ const MyAccount = () => {
                       placeholder="Enter First Name"
                       value={accountFormik.values.firstName}
                       onChange={accountFormik.handleChange}
-                      onBlur={accountFormik.handleBlur}
+                      // onBlur={accountFormik.handleBlur}
                       errorMsg={
                         accountFormik.touched.firstName
                           ? accountFormik.errors.firstName
@@ -80,7 +80,7 @@ const MyAccount = () => {
                       placeholder="Enter Last Name"
                       value={accountFormik.values.lastName}
                       onChange={accountFormik.handleChange}
-                      onBlur={accountFormik.handleBlur}
+                      // onBlur={accountFormik.handleBlur}
                       errorMsg={
                         accountFormik.touched.lastName
                           ? accountFormik.errors.lastName

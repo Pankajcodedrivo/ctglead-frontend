@@ -58,3 +58,9 @@ export const dobSchema = yup
 export const phoneSchema = yup
   .string()
   .required(VALIDATION_MESSAGES.PHONE);
+
+// support validation
+
+export const fullNameSchema = yup.string()
+  .trim()
+  .required(VALIDATION_MESSAGES.FULL_NAME);

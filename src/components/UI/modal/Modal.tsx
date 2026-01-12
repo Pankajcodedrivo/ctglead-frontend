@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDom from "react-dom";
+import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import classes from "./Modal.module.scss";
 import Card from "../card/Card";
@@ -8,14 +7,10 @@ import Button from "../button/Button";
 interface IBackdrop {
   onConfirm: () => void;
 }
-const Backdrop: React.FC<IBackdrop> = (props) => {
-  return <div className={classes.backdrop} onClick={props.onConfirm}></div>;
-};
 
-// interface IModalOverlay {
-//   title: string;
-//   message: string;
-// }
+const Backdrop = ({ onConfirm }: IBackdrop) => {
+  return <div className={classes.backdrop} onClick={onConfirm} />;
+};
 
 interface IModal {
   title: string;
@@ -23,23 +18,23 @@ interface IModal {
   onConfirm: () => void;
 }
 
-const ModalOverlay: React.FC<IModal> = (props) => {
+const ModalOverlay = ({ title, message, onConfirm }: IModal) => {
   const { t } = useTranslation();
 
   return (
     <Card>
       <div className={classes.modal}>
         <header className={classes.header}>
-          <h3>{props.title}</h3>
+          <h3>{title}</h3>
         </header>
         <div className={classes.content}>
-          <p>{props.message}</p>
+          <p>{message}</p>
         </div>
         <footer className={classes.actions}>
-          <Button outline={true} onClick={props.onConfirm}>
+          <Button outline onClick={onConfirm}>
             {t("cancel")}
           </Button>
-          <button className={classes.delete} onClick={props.onConfirm}>
+          <button className={classes.delete} onClick={onConfirm}>
             {t("delete")}
           </button>
         </footer>
@@ -48,22 +43,25 @@ const ModalOverlay: React.FC<IModal> = (props) => {
   );
 };
 
-const Modal: React.FC<IModal> = (props) => {
-  const backdropRoot = document.getElementById("backdrop-root") as HTMLElement;
-  const modalOverlay = document.getElementById("overlay-root") as HTMLElement;
+const Modal = ({ title, message, onConfirm }: IModal) => {
+  const backdropRoot = document.getElementById("backdrop-root");
+  const modalRoot = document.getElementById("overlay-root");
+
+  if (!backdropRoot || !modalRoot) return null;
+
   return (
     <>
-      {ReactDom.createPortal(
-        <Backdrop onConfirm={props.onConfirm} />,
+      {createPortal(
+        <Backdrop onConfirm={onConfirm} />,
         backdropRoot
       )}
-      {ReactDom.createPortal(
+      {createPortal(
         <ModalOverlay
-          title={props.title}
-          message={props.message}
-          onConfirm={props.onConfirm}
+          title={title}
+          message={message}
+          onConfirm={onConfirm}
         />,
-        modalOverlay
+        modalRoot
       )}
     </>
   );

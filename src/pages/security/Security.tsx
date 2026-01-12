@@ -109,8 +109,9 @@ const Security = () => {
                                         value={emailFormik.values.email}
                                         onChange={emailFormik.handleChange}
                                         errorMsg={
-                                        emailFormik.touched.email &&
-                                        emailFormik.errors.email
+                                        emailFormik.touched.email 
+                                        ? ( emailFormik.errors.email as string )
+                                        : undefined
                                         }
                                     />
                                 </div>
@@ -139,8 +140,9 @@ const Security = () => {
                             value={passwordFormik.values.oldPassword}
                             onChange={passwordFormik.handleChange}
                             errorMsg={
-                                passwordFormik.touched.oldPassword &&
-                                passwordFormik.errors.oldPassword
+                            passwordFormik.touched.oldPassword
+                              ? ( passwordFormik.errors.oldPassword as string )
+                              : undefined
                             }
                             rightIcon={
                                 <img
@@ -162,8 +164,9 @@ const Security = () => {
                                 value={passwordFormik.values.newPassword}
                                 onChange={passwordFormik.handleChange}
                                 errorMsg={
-                                    passwordFormik.touched.newPassword &&
-                                    passwordFormik.errors.newPassword
+                                    passwordFormik.touched.newPassword
+                                    ? ( passwordFormik.errors.newPassword as string )
+                                    : undefined
                                 }
                                 rightIcon={
                                     <img
@@ -185,8 +188,9 @@ const Security = () => {
                                 value={passwordFormik.values.confirmPassword}
                                 onChange={passwordFormik.handleChange}
                                 errorMsg={
-                                    passwordFormik.touched.confirmPassword &&
-                                    passwordFormik.errors.confirmPassword
+                                    passwordFormik.touched.confirmPassword
+                                    ? ( passwordFormik.errors.confirmPassword as string )
+                                    : undefined
                                 }
                                 rightIcon={
                                     <img

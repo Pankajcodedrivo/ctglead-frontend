@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import Input from "../input/Input";
 import form from "./formcus.module.scss";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { type RootState } from "../../../store/store";
 import { useProfileUpdate } from "./useProfileUpdate";
-import Select from "react-select";
 import Avatar from "../../../../src/assets/images/avatar.jpg";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../../store/auth.store";
 import toast from "react-hot-toast";
 import { updateProfileImage } from "../../../service/apis/user.api";
-import GoogleAutoComplete from "../../../layout/GoogleAutoComplete";
+// import GoogleAutoComplete from "../../../layout/GoogleAutoComplete";
 
 const FormCus = () => {
   const { addProfileFormik } = useProfileUpdate();
@@ -92,7 +91,7 @@ const FormCus = () => {
                   First Name <span style={{ color: "red" }}>*</span>
                 </label>
                 <Input
-                  classes='passwordlabel'
+                  className='passwordlabel'
                   type={"text"}
                   id='firstName'
                   placeholder={"Enter your first name"}
@@ -116,7 +115,7 @@ const FormCus = () => {
                   Last Name <span style={{ color: "red" }}>*</span>
                 </label>
                 <Input
-                  classes='passwordlabel'
+                  className='passwordlabel'
                   type={"text"}
                   id='lastName'
                   placeholder={"Enter your last name"}
@@ -140,7 +139,7 @@ const FormCus = () => {
                   Email <span style={{ color: "red" }}>*</span>
                 </label>
                 <Input
-                  classes={`passwordlabel ${addProfileFormik.values.email ? 'disabled-input' : ''}`}
+                  className={`passwordlabel ${addProfileFormik.values.email ? 'disabled-input' : ''}`}
                   type={"text"}
                   id='email'
                   placeholder={"Enter your email address"}
@@ -162,7 +161,7 @@ const FormCus = () => {
                   Date of Birth <span style={{ color: "red" }}>*</span>
                 </label>
                 <Input
-                  classes={`passwordlabel`}
+                  className={`passwordlabel`}
                   type="date"
                   name="DOB"
                   id='DOB'
@@ -173,7 +172,7 @@ const FormCus = () => {
                         .split("T")[0]
                       : ""
                   }
-                  onChange={(e) =>
+                  onChange={(e:any) =>
                     addProfileFormik.setFieldValue(
                       "DOB",
                       e.target.value ? new Date(e.target.value) : null
@@ -228,7 +227,7 @@ const FormCus = () => {
                   Phone Number<span style={{ color: "red" }}>*</span>
                 </label>
                 <Input
-                  classes='passwordlabel'
+                  className='passwordlabel'
                   type={"text"}
                   name="phoneNumber"
                   id="phoneNumber"
