@@ -26,8 +26,6 @@ const Settings = () => {
     const [communicationPref, setCommunicationPref] = useState(
     user?.communicationPref ?? "email"
     );
-
-
     // Logout handler
     function logoutHandler() {
         dispatch(logOut());
@@ -35,21 +33,21 @@ const Settings = () => {
         navigate("/login");
     }
     // Delete account
-const handleDeleteAccount = async () => {
-    const confirmed = await confirmDelete({
-    title: "Delete Account?",
-    description: "This will permanently delete your account and all associated data.",
-    });
-if (!confirmed) return;
-  try {
-   await deleteAccount();
-    dispatch(logOut());
-    localStorage.clear();
-    navigate("/login");
-  } catch (error) {
-    console.error("Account deletion failed", error);
-  }
-};
+    const handleDeleteAccount = async () => {
+        const confirmed = await confirmDelete({
+        title: "Delete Account?",
+        description: "This will permanently delete your account and all associated data.",
+        });
+    if (!confirmed) return;
+    try {
+    await deleteAccount();
+        dispatch(logOut());
+        localStorage.clear();
+        navigate("/login");
+    } catch (error) {
+        console.error("Account deletion failed", error);
+    }
+    };
 
 // Handle notification settings
 const handleNotificationToggle = async (
